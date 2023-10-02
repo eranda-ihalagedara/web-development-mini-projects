@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Home</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="=css/fontawesome/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 </head>
 <body>
     <header>
@@ -17,18 +20,18 @@
                 <p>Store</p>
             </a>
         </nav>
-        <section>
+        <section class="settings">
             <a class="whitelink" href="">
                 <p>Gmail</p>
             </a>
             <a class="whitelink" href="">
                 <p>Images</p>
             </a>
-            <a href="">
-                <!-- Dots -->
+            <a class="whitelink" href="">
+                <i class="fa-solid fa-ellipsis-vertical"></i>  
             </a>
-            <a href="">
-                <!-- Profile -->
+            <a class="whitelink" href="">
+                <img src="/img/profile.jpg">
             </a>
 
         </section>
@@ -40,15 +43,15 @@
         </div>
         <div class="searchbar">
             <div>
-                icon
+                <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <input value="web dev">
-            <div>
-                <button>
-                    Icon
+            <input>
+            <div class="iconButtonContainer">
+                <button class="iconButton">
+                    <i class="fa-solid fa-microphone"></i>
                 </button>
-                <button>
-                    Icon
+                <button class="iconButton">
+                    <i class="fa-solid fa-camera"></i>
                 </button>
             </div> 
         </div>
@@ -63,9 +66,9 @@
     </main>
     <footer>
         <section>
-            <p>Australia</p>
+            <p class="greytext">Australia</p>
         </section>
-        <section>
+        <section class="details">
             <div>
                 <a class="greylink" href="">Advertising </a>
                 <a class="greylink" href="">Business </a>
