@@ -7,6 +7,13 @@ body{
     min-width: 540px;
 }
 
+.demo{
+    background-color: #ffc400;
+    color:  #3a3a3a;
+    text-align: center;
+    font-weight: bold;
+}
+
 /* Header row with nav links and banner sections */
 header{
     background-color: #1f2937;
@@ -18,7 +25,7 @@ header{
 }
 
 .header-container{
-    width: 80%;
+    width: 70%;
     /* display: flex; */
     flex-direction: column;
     justify-content:space-between;
@@ -54,6 +61,7 @@ nav{
 
 .banner-container{
     height: 450px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,8 +70,10 @@ nav{
 
 .banner-section{
     height: 200px;
+    width: 100%;
     display: flex;
     gap: 10px;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
@@ -73,7 +83,7 @@ nav{
 }
 
 .hero-text{
-    width: 300px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -154,17 +164,18 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap:10px;
 }
 
 .quote{
-    width: 80%;
+    width: 70%;
     font-size: 36px;
     font-style: italic;
     font-weight: 20;
 }
 
 .author{
-    width: 80%;
+    width: 70%;
     font-size: 24px;
     font-weight: 900;
     text-align: right;
@@ -183,7 +194,7 @@ nav{
     color: white;
     background-color: #3882f6;
     height: 150px;
-    width: 70%;
+    width: 50%;
     border-radius: 10px;
     padding-left: 10%;
     padding-right: 10%;
