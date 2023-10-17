@@ -1,12 +1,17 @@
 body{
     background-color: #f4f5f8;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.flex-container{
+#flex-container{
     display:flex;
     align-items: center;
     justify-content: center;
     height: 500px;
+    width: 800px;
+    transform-style: preserve-3d; 
 }
 
 #viewpoint{
@@ -25,7 +30,6 @@ body{
     /* transition: transform 2s;
     transform: rotateX(0deg) rotateY(0deg); */
 }
-
 
 @keyframes resetPosition{
     to { perspective-origin: 50% 50%; }
@@ -53,11 +57,11 @@ body{
 }
 
 .panel{
-    background: #eceff3a6;
+    background: #b8bdc2;
     position: absolute;
     width: 200px;
     height: 200px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     backface-visibility: hidden;
     /* transform-style: preserve-3d;     */
     /* transform-style: preserve-3d;
@@ -67,26 +71,79 @@ body{
 
 .one {
     transform: translate3d(0px, 0px, 100px);
+    animation: lighting-one 5s linear infinite;
+}
+
+@keyframes lighting-one {
+    0% {background: #b8bdc2;}
+    25% {background: #eaeef3;}
+    50% {background: #b8bdc2;}
+    75% {background: #757779;}
+    100% {background: #b8bdc2;}
+    
 }
 
 .two {
   transform: rotateY(90deg) translate3d(0px, 0px, 100px);
+  animation: lighting-two 5s linear infinite;
+}
+
+@keyframes lighting-two {
+    0% {background: #b8bdc2;}
+    25% {background: #b8bdc2;}
+    50% {background: #757779;}
+    75% {background: #b8bdc2;}
+    100% {background: #eaeef3;}
+    
 }
 
 .three {
   transform: rotateY(180deg) translate3d(0px, 0px, 100px);
+  animation: lighting-three 5s linear infinite;
+}
+
+@keyframes lighting-three {
+    0% {background: #b8bdc2;}
+    25% {background: #757779;}
+    50% {background: #b8bdc2;}
+    75% {background: #eaeef3;}
+    100% {background: #b8bdc2;}
 }
 
 .four {
     transform: rotateY(270deg) translate3d(0px, 0px, 100px);
+    animation: lighting-four 5s linear infinite;
+}
+
+@keyframes lighting-four {
+    0% {background: #b8bdc2;}
+    50% {background: #eaeef3;}
+    100% {background: #b8bdc2;}
+    
 }
 
 .five {
     transform: rotateX(90deg) translate3d(0px, 0px, 100px);
+    animation: lighting-five 5s linear infinite;
+}
+
+@keyframes lighting-five {
+    0% {background: #eaeef3;}
+    50% {background: #b8bdc2;}
+    100% {background: #eaeef3;}
+    
 }
 
 .six {
     transform: rotateX(-90deg) translate3d(0px, 0px, 100px);
+    animation: lighting-six 5s linear infinite;
 }
 
+@keyframes lighting-six {
+    0% {background: #757779;}
+    24% {background: #b8bdc2;}
+    50% {background: #eaeef3;}
+    75% {background: #b8bdc2;}
+    100% {background: #b8bdc2;}
+}
 
