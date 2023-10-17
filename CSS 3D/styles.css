@@ -1,36 +1,92 @@
 body{
     background-color: #f4f5f8;
-    display: flex;
+}
+
+.flex-container{
+    display:flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    height: 500px;
 }
 
 #viewpoint{
     /* position: relative; */
-    margin-top: 100px;
     height: 100px;
     width: 100px;
-    perspective: 1000px;
+    perspective: 500px;
+    perspective-origin: 50% 50%; 
+    /* border: 2px solid blue; */
+    transform-style: preserve-3d; 
+}
+
+
+#viewpoint:not(:hover) {
+    animation: resetPosition 1s linear forwards;
+    /* transition: transform 2s;
+    transform: rotateX(0deg) rotateY(0deg); */
+}
+
+
+@keyframes resetPosition{
+    to { perspective-origin: 50% 50%; }
+}
+
+.cube{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+
+    transform: translate3d(0px, 0px, -200px);
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    animation: rotation 5s linear infinite;
 }
 
-#panel{
-    background: #eceff3;
-    box-shadow: 5px 5px 15px 0px grey;
+@keyframes rotation {
+    from{transform: rotate3d(1,0,1,0deg);}
+    to{transform: rotate3d(1,1,0,360deg);}
+    
+}
+
+.panel{
+    background: #eceff3a6;
     position: absolute;
-    width: 300px;
+    width: 200px;
     height: 200px;
-    border-radius: 5px;
+    border: 1px solid red;
+    backface-visibility: hidden;
+    /* transform-style: preserve-3d;     */
+    /* transform-style: preserve-3d;
+    transform: rotateX(1deg) translate3d(0px, 0px, 100px); */
     /* animation: mymove 1s linear forwards; */
 }
 
-#viewpoint:not(:hover) #panel{
-    animation: resetPosition 1s linear forwards;
+.one {
+    transform: translate3d(0px, 0px, 100px);
 }
 
-@keyframes resetPosition{
-    to {transform: rotateX(0deg) rotateY(0deg);}
+.two {
+  transform: rotateY(90deg) translate3d(0px, 0px, 100px);
 }
+
+.three {
+  transform: rotateY(180deg) translate3d(0px, 0px, 100px);
+}
+
+.four {
+    transform: rotateY(270deg) translate3d(0px, 0px, 100px);
+}
+
+.five {
+    transform: rotateX(90deg) translate3d(0px, 0px, 100px);
+}
+
+.six {
+    transform: rotateX(-90deg) translate3d(0px, 0px, 100px);
+}
+
+

@@ -1,18 +1,25 @@
 // Get the element with id "output"
-let output = document.getElementById("output");
 let viewpoint = document.getElementById("viewpoint");
 let panel = document.getElementById("panel");
+let txt = document.getElementById("mouse_loc");
 
 // Add a "mousemove" event listener
 
 viewpoint.onmousemove = function(event) {
-    // Get the X and Y coordinates of the mouse
-    const xPos = event.clientX - (viewpoint.offsetLeft + viewpoint.offsetHeight/2);
-    const yPos = event.clientY - (viewpoint.offsetTop + viewpoint.offsetWidth/2);
-  
-    panel.style.transform = `rotateX(${yPos/5}deg) rotateY(${xPos/5}deg)`;
+  console.log('In')
 
-  };
+  // Get the X and Y coordinates of the mouse
+  const rect = viewpoint.getBoundingClientRect();
+  const xPos = event.clientX - (rect.left + viewpoint.offsetWidth/2);
+  const yPos = event.clientY - (rect.top + viewpoint.offsetHeight/2);
+
+  // panel.style.transform = `rotateX(${yPos/5}deg) rotateY(${xPos/10}deg)`;
+  viewpoint.style.perspectiveOrigin = `${xPos/2}% ${yPos/2}%`;
+  // panel.style.perspectiveOrigin = `50% 50%`;
+
+  // txt.innerHTML = xPos + "," + yPos + " | " + event.clientX + ","+event.clientY + " | " + rect.top + "," + rect.left;
+    
+};
 
 
 //   viewpoint.onmouseleave = function(event) {
