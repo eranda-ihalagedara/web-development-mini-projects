@@ -3,29 +3,21 @@ body{
     display:flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-#flex-container{
+#viewpoint{
     display:flex;
     align-items: center;
     justify-content: center;
     height: 500px;
     width: 800px;
-    transform-style: preserve-3d; 
-}
-
-#viewpoint{
-    /* position: relative; */
-    height: 100px;
-    width: 100px;
-    perspective: 500px;
+    perspective: 1000px;
     perspective-origin: 50% 50%; 
-    /* border: 2px solid blue; */
     transform-style: preserve-3d; 
 }
 
-
-#viewpoint:not(:hover) {
+#viewpoint:not(:hover){
     animation: resetPosition 1s linear forwards;
     /* transition: transform 2s;
     transform: rotateX(0deg) rotateY(0deg); */
@@ -37,8 +29,6 @@ body{
 
 .cube{
     position: relative;
-    height: 100%;
-    width: 100%;
     transform-style: preserve-3d;
 
     transform: translate3d(0px, 0px, -200px);
@@ -89,7 +79,7 @@ body{
 }
 
 @keyframes lighting-two {
-    0% {background: #b8bdc2;}
+    0% {background: #eaeef3;}
     25% {background: #b8bdc2;}
     50% {background: #757779;}
     75% {background: #b8bdc2;}
