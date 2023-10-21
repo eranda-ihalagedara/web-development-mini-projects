@@ -191,6 +191,8 @@ async function predictWebcam() {
 }
 function displayVideoDetections(detections) {
     // Remove any highlighting from previous frame.
+    const eye_loc = document.getElementById("eye_loc");
+    const cords = [];
     for (let child of children) {
         liveView.removeChild(child);
     }
@@ -236,6 +238,7 @@ function displayVideoDetections(detections) {
         // Store drawn objects in memory so they are queued to delete at next call
         children.push(highlighter);
         children.push(p);
+        let kp_count = 0
         for (let keypoint of detection.keypoints) {
             const keypointEl = document.createElement("spam");
             keypointEl.className = "key-point";
@@ -243,6 +246,11 @@ function displayVideoDetections(detections) {
             keypointEl.style.left = `${video.offsetWidth - keypoint.x * video.offsetWidth - 3}px`;
             liveView.appendChild(keypointEl);
             children.push(keypointEl);
+            if(kp_count<2){
+                cords.push([Math.round(keypoint.x * video.offsetWidth), Math.round(keypoint.y * video.offsetHeight)]);
+            }
+            kp_count++;
         }
     }
+    eye_loc.innerHTML = cords.toString();
 }
