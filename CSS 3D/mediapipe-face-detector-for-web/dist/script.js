@@ -64,8 +64,11 @@ async function handleClick(event) {
     console.log(detections);
     displayImageDetections(detections, event.target);
 }
+
+
 function displayImageDetections(detections, resultElement) {
     const ratio = resultElement.height / resultElement.naturalHeight;
+    const txt = resultElement.parentNode.getElementsByClassName("dsp");
     console.log(ratio);
     for (let detection of detections) {
         // Description text
@@ -108,6 +111,7 @@ function displayImageDetections(detections, resultElement) {
                 "px;";
         resultElement.parentNode.appendChild(highlighter);
         resultElement.parentNode.appendChild(p);
+        const kps = [];
         for (let keypoint of detection.keypoints) {
             const keypointEl = document.createElement("spam");
             keypointEl.className = "key-point";
@@ -115,6 +119,13 @@ function displayImageDetections(detections, resultElement) {
             keypointEl.style.left = `${keypoint.x * resultElement.width - 3}px`;
             resultElement.parentNode.appendChild(keypointEl);
         }
+        
+        txt[0].innerHTML = [
+            [Math.round(detection.keypoints[0].x * resultElement.width), 
+            Math.round(detection.keypoints[0].y * resultElement.height)],
+            [Math.round(detection.keypoints[1].x * resultElement.width), 
+            Math.round(detection.keypoints[1].y * resultElement.height)]
+        ].toString();
     }
 }
 /********************************************************************
