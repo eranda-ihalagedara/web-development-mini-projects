@@ -6,7 +6,7 @@ body{
     /* background-color: #f4f5f8; */
     background: fixed;
     background: rgb(232,232,232);
-    background: linear-gradient(180deg, rgb(16, 117, 160) 0%, rgb(18, 70, 94) 100%);
+    background: radial-gradient(circle, rgb(16, 117, 160) 0%, rgb(18, 70, 94) 100%);
     background-repeat: no-repeat;
     height: 100%;
     margin: 0;
