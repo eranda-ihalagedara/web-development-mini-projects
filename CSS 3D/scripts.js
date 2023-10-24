@@ -6,7 +6,6 @@ let panel = document.getElementById("panel");
 // Add a "mousemove" event listener
 
 viewpoint.onmousemove = function(event) {
-  console.log('In')
 
   // Get the X and Y coordinates of the mouse
   const rect = viewpoint.getBoundingClientRect();

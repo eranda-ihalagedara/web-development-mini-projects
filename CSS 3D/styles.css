@@ -1,5 +1,15 @@
+html {
+    height: 100%;
+}
+
 body{
-    background-color: #f4f5f8;
+    /* background-color: #f4f5f8; */
+    background: fixed;
+    background: rgb(232,232,232);
+    background: linear-gradient(180deg, rgb(16, 117, 160) 0%, rgb(18, 70, 94) 100%);
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -29,6 +39,8 @@ body{
 
 .cube{
     position: relative;
+    height: 300px;
+    width: 300px;
     transform-style: preserve-3d;
 
     transform: translate3d(0px, 0px, -200px);
@@ -49,8 +61,8 @@ body{
 .panel{
     background: #b8bdc2;
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 201px;
+    height: 201px;
     /* border: 1px solid red; */
     backface-visibility: hidden;
     /* transform-style: preserve-3d;     */
@@ -66,9 +78,9 @@ body{
 
 @keyframes lighting-one {
     0% {background: #b8bdc2;}
-    25% {background: #eaeef3;}
+    25% {background: #f9fbff;}
     50% {background: #b8bdc2;}
-    75% {background: #757779;}
+    75% {background: #202122;}
     100% {background: #b8bdc2;}
     
 }
@@ -79,11 +91,11 @@ body{
 }
 
 @keyframes lighting-two {
-    0% {background: #eaeef3;}
+    0% {background: #f5f9ff;}
     25% {background: #b8bdc2;}
-    50% {background: #757779;}
+    50% {background: #202122;}
     75% {background: #b8bdc2;}
-    100% {background: #eaeef3;}
+    100% {background: #f5f9ff;}
     
 }
 
@@ -94,9 +106,9 @@ body{
 
 @keyframes lighting-three {
     0% {background: #b8bdc2;}
-    25% {background: #757779;}
+    25% {background: #202122;}
     50% {background: #b8bdc2;}
-    75% {background: #eaeef3;}
+    75% {background: #f5f9ff;}
     100% {background: #b8bdc2;}
 }
 
@@ -107,7 +119,7 @@ body{
 
 @keyframes lighting-four {
     0% {background: #b8bdc2;}
-    50% {background: #eaeef3;}
+    50% {background: #f5f9ff;}
     100% {background: #b8bdc2;}
     
 }
@@ -118,9 +130,9 @@ body{
 }
 
 @keyframes lighting-five {
-    0% {background: #eaeef3;}
+    0% {background: #f5f9ff;}
     50% {background: #b8bdc2;}
-    100% {background: #eaeef3;}
+    100% {background: #f5f9ff;}
     
 }
 
@@ -130,10 +142,29 @@ body{
 }
 
 @keyframes lighting-six {
-    0% {background: #757779;}
+    0% {background: #202122;}
     24% {background: #b8bdc2;}
-    50% {background: #eaeef3;}
+    50% {background: #f5f9ff;}
     75% {background: #b8bdc2;}
     100% {background: #b8bdc2;}
+}
+
+.panel-set{
+    height: 300px;
+    width: 300px;
+    transform-style: preserve-3d;
+    display: none;
+}
+
+.ps1{
+    transform: translate3d(-500px, 0px, -500px);
+}
+
+.ps2{
+    transform: translate3d(-250px, 0px, -500px);
+}
+
+.ps3{
+    transform: translate3d(0px, 0px, -500px);
 }
 
