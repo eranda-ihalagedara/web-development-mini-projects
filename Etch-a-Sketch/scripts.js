@@ -1,10 +1,12 @@
 let gridSize = 16;
 let penColor = 'black';
+let opacity = 100;
+let opacitySign = 1;
 let isOverPad = false;
 let isMouseDown = false;
 
 const containerDiv = document.querySelector('#container');
-containerDiv.classList.toggle('pen-enabled');
+containerDiv.classList.add('pen-enabled');
 
 // Stop drawing when mouse leaves the pad
 containerDiv.addEventListener('mouseleave', (e) => {
@@ -18,17 +20,18 @@ function createGrid(size) {
         for(let j = 0; j < size ; j++) {
             const div = document.createElement('div');
             div.setAttribute('class', 'flex-item');
+            div.style.opacity = 0;
             
             div.addEventListener('mousedown', (e) => {
                 isMouseDown = true;
-                changeColor(e, penColor);
+                drawOnTile(e, penColor);
             });
             div.addEventListener('mouseup', () => {
                 isMouseDown = false;
             });
             div.addEventListener('mouseover', (e) => {
                 if(!isMouseDown) return;
-                changeColor(e, penColor);
+                drawOnTile(e, penColor);
             });
             
             row.appendChild(div);
@@ -37,8 +40,9 @@ function createGrid(size) {
     }
 }
 
-function changeColor(e, color) {
+function drawOnTile(e, color) {
     e.target.style.backgroundColor = color;
+    e.target.style.opacity = Math.max(Math.min(Number.parseFloat(e.target.style.opacity) + opacitySign*opacity / 100, 1), 0);
 }
 
 createGrid(gridSize);
@@ -49,6 +53,7 @@ eraseButton.addEventListener('click', (e) => {
     
     containerDiv.classList.toggle('pen-enabled');
     containerDiv.classList.toggle('eraser-enabled');
+    opacitySign *= -1;
 
     penColor = ((curColor) => {
         if (curColor == 'black') return 'white';
@@ -68,12 +73,13 @@ clearButton.addEventListener('click', (e) => {
     const tiles = document.querySelectorAll('.flex-item');
     tiles.forEach((tile) => {
         tile.style.backgroundColor = 'white';
+        tile.style.opacity = '0';
     });
     containerDiv.classList.add('pen-enabled');
     containerDiv.classList.remove('eraser-enabled');
 
     penColor = 'black';
-    
+    opacitySign = 1;
     eraseButton.textContent = "Erase";
 });
 
@@ -101,4 +107,12 @@ resolutionButton.addEventListener('click', (e) => {
     gridSize = newGridSize;
     createGrid(gridSize);
 
+});
+
+// Change opacity
+const opacityRange = document.querySelector('#opacity-range');
+const opacityValue = document.querySelector('#opacity-value');
+opacityRange.addEventListener('input', (e) => {
+    opacity = e.target.value;
+    opacityValue.textContent = opacity;
 });
