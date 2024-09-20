@@ -1,11 +1,12 @@
 .flex-container{
     display: flex;
     flex-direction: column;
-    width: 800px;
-    height: 800px;
+    width: 512px;
+    height: 512px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    border: 2px solid black;
 }
 
 .flex-row{
@@ -19,3 +20,9 @@
     flex: 1;
 }
 
+.pen-enabled{
+    cursor: url(images/pen.png), auto;
+}
+.eraser-enabled{
+    cursor: url(images/white_square_black_border.png), auto;
+}
