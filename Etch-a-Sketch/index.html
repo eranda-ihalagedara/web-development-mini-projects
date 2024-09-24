@@ -6,24 +6,34 @@
         <title>Etch-a-Sketch</title>
         <link rel="stylesheet" href="styles.css">
         <script src="scripts.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <section>
-            <h2>Etch-a-Sketch</h2>
-            <h3>Sketch on the pad below</h3>
-            <button id="btn-erase">Erase</button>
-            <button id="btn-clear">Clear </button>
-            <button id="btn-resolution">Change Resolution</button>
-            <div class="slidecontainer">
-                <label for="opacity-range">Opacity</label>
-                <input type="range" min="1" max="100" value="100" class="slider" id="opacity-range">
-                <span id="opacity-value">100</span>
+        <header>
+            <h1>Etch-a-Sketch</h1>
+        </header>
+        <main>
+            <div class="controls">
+                <input type="color" id="color-picker">
+                <button id="btn-erase">Eraser</button>
+                <button id="btn-clear">Clear </button>
+                <div class="opacity-slide-container">
+                    <label id="opacity-value" for="opacity-range">Opacity: 100</label>
+                    <input type="range" min="1" max="100" value="100" class="slider" name="opacity-range" id="opacity-range">
+                </div>
             </div>
-        </section>
-        <hr>
-        <section>
-            <div id="container" class="flex-container">
+            <div class="sketch-pad">
+                <div id="grid" class="grid-container"></div>
+                <div class="grid-slide-container">
+                    <input type="range" min="4" max="64" value="16" class="slider" name="grid-size-range" id="grid-size-range">
+                    <label id="grid-size-label" for="grid-size-range">16 x 16</label>
+                </div>
             </div>
-        </section>
+        </main>
+        <footer>
+            <p>Copyright &copy; Dan Rae 2024</p>
+        </footer>
     </body>
 </html> 
